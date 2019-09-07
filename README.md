@@ -48,6 +48,6 @@ go run main.go
 
 ### License
 
-![GitHub](https://img.shields.io/github/license/the-evengers/go-restful) - Copyright 2019 *The Evengers*. 
+![GitHub](https://img.shields.io/github/license/the-evengers/go-restful) ![The-Evengers](https://img.shields.io/static/v1?label=copyright&message=The%20Evengers&color=lightgrey)
 
 This project is developed and maintained by *The Evengers*, an open source cummunity organization, and therfore always available for free.
