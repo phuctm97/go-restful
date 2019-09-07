@@ -50,4 +50,4 @@ go run main.go
 
 ![GitHub](https://img.shields.io/github/license/the-evengers/go-restful) ![The-Evengers](https://img.shields.io/static/v1?label=copyright&message=The%20Evengers&color=lightgrey)
 
-This project is developed and maintained by *The Evengers*, an open source cummunity organization, and therfore always available for free.
+This project is publicly developed and maintained by *The Evengers*, an open source community organization, and therfore always available for free.
