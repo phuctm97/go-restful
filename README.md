@@ -18,3 +18,29 @@ A real world production-grade RESTful proof-of-concept project.
 ## Issues Tracking
 
 This project use Github project, issues and pull requests to manage and track issues. Refer to [Go RESTful](https://github.com/the-evengers/go-restful/projects/1) for details.
+
+## Development
+
+### Requirements
+
+This project uses *Docker* to simplify the process of setting up local development environment. Therefore, [Docker](https://www.docker.com) is the only requirement to run this project in development mode.
+
+***Note**: Developers are still able to set up their own local development environment directly on their local machine or use other environment management technology. However, those methods are beyond this project's scope and therefore some later documented features might not work properly.
+
+### Develop
+
+To start development environment, run following command:
+
+``` shell
+./scripts/start-dev.sh
+```
+
+Above command will start a Docker container in interactive mode and mount the repo's base directory to `/go/src/github.com/the-evengers/go-restful` inside the container, so that developers can make changes to the repo from their local machine and have those changes automatically reflected into the container. 
+
+In interactive mode within the container, developers can execute every `go` CLI commands, e.g:
+
+``` shell
+# To start the application
+go run main.go
+```
+**
