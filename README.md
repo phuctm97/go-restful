@@ -14,3 +14,7 @@ A real world production-grade RESTful proof-of-concept project.
 - An optimized CI/CD solution with CircleCI and AWS.
 - An optimized issues tracking mechanism with Github projects, issues and pull requests.
 - Continual improvements.
+
+## Issues Tracking
+
+This project use Github project, issues and pull requests to manage and track issues. Refer to [Go RESTful](https://github.com/the-evengers/go-restful/projects/1) for details.
