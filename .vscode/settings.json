@@ -1,6 +1,5 @@
 {
-    "remote.containers.defaultExtensions": [
-    ],
-    "remote.extensionKind": {
-    }
+    "files.trimTrailingWhitespace": true,
+    "files.trimFinalNewlines": true,
+    "files.insertFinalNewline": true
 }

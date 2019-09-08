@@ -1,10 +1,11 @@
 package main
 
 import (
-	"runtime"
 	"fmt"
+	"runtime"
 )
 
 func main() {
-	fmt.Printf("Hello World from %s!\n", runtime.GOOS)
+	os := runtime.GOOS
+	fmt.Printf("Hello World from %s!\n", os)
 }

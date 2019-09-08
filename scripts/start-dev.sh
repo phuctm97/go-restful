@@ -4,7 +4,7 @@ local_workdir=$(cd $(dirname $(dirname "${BASH_SOURCE[0]}")) >/dev/null 2>&1 && 
 
 main() {
   local container_workdir=/go/src/github.com/the-evengers/go-restful
-  local container_name=go-restful   
+  local container_name=go-restful
 
   docker run --rm -it \
     --name $container_name \
