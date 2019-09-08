@@ -1,0 +1,15 @@
+{
+    "dockerFile": "Dockerfile",
+    "appPort": [
+        "8000:8000"
+    ],
+    "runArgs": [
+        // Mount local .ssh directory to container's /tmp/ssh-localhost so that we can later copy its contents.
+        "-v", "${env:HOME}${env:USERPROFILE}/.ssh:/tmp/ssh-localhost:ro"
+    ],
+    // Copy the /tmp/ssh-localhost to the correct location and set permissions.
+    "postCreateCommand": "mkdir -p ~/.ssh && cp -r ~/.ssh-localhost/* ~/.ssh && chmod 700 ~/.ssh && chmod 600 ~/.ssh/*",
+    "extensions": [
+        "ms-vscode.go"
+    ]
+}

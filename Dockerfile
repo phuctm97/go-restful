@@ -36,3 +36,6 @@ RUN apt-get update \
 
 # Revert workaround at top layer.
 ENV DEBIAN_FRONTEND=dialog
+
+# Expose service ports.
+EXPOSE 8000
