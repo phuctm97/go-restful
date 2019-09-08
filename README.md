@@ -37,7 +37,7 @@ To start development environment, run following command:
 ./scripts/start-dev.sh
 ```
 
-Above command will start a Docker container in interactive mode and mount the repo's base directory to `/go/src/github.com/the-evengers/go-restful` inside the container, so that developers can make changes to the repo from their local machine and have those changes automatically reflected into the container. 
+Above command will start a Docker container in interactive mode and mount the repo's base directory to `/go/src/github.com/the-evengers/go-restful` inside the container, so that developers can make changes to the repo from their local machine and have those changes automatically reflected into the container.
 
 In interactive mode within the container, developers can execute every `go` CLI commands, e.g:
 
