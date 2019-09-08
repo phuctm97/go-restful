@@ -36,4 +36,3 @@ RUN apt-get update \
 
 # Revert workaround at top layer.
 ENV DEBIAN_FRONTEND=dialog
-
