@@ -9,6 +9,9 @@ local_workdir=$(cd $(dirname $(dirname "${BASH_SOURCE[0]}")) >/dev/null 2>&1 && 
 main() {
   local image_name=vsc-go-restful
   local container_name=$image_name
+  # Mounted location within containers of local workspace
+  # should be updated respectively to module importing schema using in Go source files,
+  # and remote repository location if necessary (recommended).
   local container_workdir=/go/src/github.com/the-evengers/go-restful
 
   # Build image (if necessary).

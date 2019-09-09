@@ -17,6 +17,7 @@ RUN apt-get update \
     && mv gocode-gomod $GOPATH/bin/ \
     # Install other essential Go packages and tools.
     && go get -u -v \
+        github.com/golang/dep/cmd/dep \
         golang.org/x/tools/cmd/gopls \
         github.com/mdempsky/gocode \
         github.com/uudashr/gopkgs/cmd/gopkgs \
