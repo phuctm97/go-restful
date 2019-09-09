@@ -65,7 +65,7 @@ code /path/to/this/repository
 
 Once the repository is opened, as the repository includes `.devcontainer.json`, VSCode will automatically ask you to reopen in container mode.
 
-![VSCode ask to repoen in container](docs/images/vscode-ask-reopen-in-container.png)
+<img src="docs/images/vscode-ask-reopen-in-container.png" alt="VSCode ask to repoen in container" height="210">
 
 Just select *Reopen in Container*, or if you've already opened the project in local mode and don't see the above prompt, you can issue the VSCode command (*View* → *Command Pallete* or press *F1*) *Remote-Containers: Reopen in Container* to achieve the same effect.
 
