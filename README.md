@@ -54,7 +54,7 @@ To open the repository in VSCode (after cloning the repository into local develo
 - Issue following command (with VSCode command line tool added to `PATH`):
 
 ``` shell
-code /path/to/tis/repository
+code /path/to/this/repository
 ```
 
 - Or open the repository using VSCode graphical user interface:
