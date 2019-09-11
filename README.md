@@ -59,6 +59,8 @@ Go [here](docs/DEV-WITHOUT-VSCODE.md) for further details.
 
 #### Project structure
 
+Quick overview of project structure, components and their roles.
+
 ```
 ├── 📁.vscode/              # VSCode configuration
 ├── 📁docs/                 # Documentation & assets
@@ -70,7 +72,7 @@ Go [here](docs/DEV-WITHOUT-VSCODE.md) for further details.
 ├── 📄Gopkg.toml            # go-dep configuration
 ├── 📖LICENSE
 ├── 📖README.md
-├── 🚀📄main.go               # Application's main entry point
+├── 🚀main.go               # Application's main entry point
 
 ```
 
