@@ -45,13 +45,17 @@ Windows users need to additionally have an Unix-shell emulator to be able to run
 
 ### Usage
 
-#### With Visual Studio Code
+#### Develop with Visual Studio Code
 
-With all of above requirements fullfiled, developers can experience a full-time local-quality VSCode-powered containerized development environment by just opening the repository in VSCode container mode. [Read more](docs/DEV-WITH-VSCODE.md).
+With all of above requirements fullfiled, developers can experience a full-time local-quality VSCode-powered containerized development environment by just opening the repository in VSCode container mode.
 
-#### Without Visual Studio Code
+Go [here](docs/DEV-WITH-VSCODE.md) for further details.
 
-Without VSCode, developers will not be able to achieve a full-time local-quality VSCode-powered containerized development environment. However, if there's any reason that you can not or do not want to work with Visual Studio Code, you can still start a containerized development environment and start working on that or even build your own development solution on top of that. [Read more](docs/DEV-WITHOUT-VSCODE.md).
+#### Develop without Visual Studio Code
+
+Without VSCode, developers will not be able to achieve a full-time local-quality VSCode-powered containerized development environment. However, if there's any reason that you can not or do not want to work with Visual Studio Code, you can still start a containerized development environment and start working on that or even build your own development solution on top of that.
+
+Go [here](docs/DEV-WITHOUT-VSCODE.md) for further details.
 
 ### License
 
