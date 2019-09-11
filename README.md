@@ -45,60 +45,13 @@ Windows users need to additionally have an Unix-shell emulator to be able to run
 
 ### Usage
 
-#### With Visual Studio Code
+#### [With Visual Studio Code](docs/DEV-WITH-VSCODE.md)
 
-With all of above requirements fullfiled, developers can experience a full-time local-quality VSCode-powered containerized development environment by just opening the repository in VSCode container mode.
+With all of above requirements fullfiled, developers can experience a full-time local-quality VSCode-powered containerized development environment by just opening the repository in VSCode container mode. Refer [here](docs/DEV-WITH-VSCODE.md) for further details.
 
-To open the repository in VSCode (after cloning the repository into local development machines), developers can either:
+#### [Without Visual Studio Code](docs/DEV-WITHOUT-VSCODE.md)
 
-- Issue following command (with VSCode command line tool added to `PATH`):
-
-``` shell
-code /path/to/this/repository
-```
-
-- Or open the repository using VSCode graphical user interface:
-
-  - Select *File* → *Open* → *Browse The Repository*.
-
-  - Or use default keyboard shortcut: *Command* + *O* (or *Ctrl* + *O* on Windows).
-
-Once the repository is opened, as the repository includes `.devcontainer.json`, VSCode will automatically ask you to reopen in container mode.
-
-<img src="docs/images/vscode-ask-reopen-in-container.png" alt="VSCode ask to repoen in container" height="120">
-
-Just select *Reopen in Container*, or if you've already opened the project in local mode and don't see the above prompt, you can issue the VSCode command (*View* → *Command Pallete* or press *F1*) *Remote-Containers: Reopen in Container* to achieve the same effect.
-
-For the first open, VSCode will automatically build an image based on `.devcontainer.json` and `Dockerfile`, the process may take a while. Latter opens will reuse the prebuilt image.
-
-Once the image was built successfully, VSCode will launch a container from that image and start setting up some essential stuff for it to work. After that, you're now connected to the container within your VSCode client, you can use every features of VSCode as is.
-
-- You can start writing code with Intellisense support.
-
-- You can run and debug the application by either selecting *Debug* → *Start Debugging* or using default keyboard shortcut *F5*.
-
-Note that the local workspace will be mounted to `/go/src/github.com/the-evengers/go-restful` within the container.
-
-#### Without Visual Studio Code
-
-Without VSCode, developers will not be able to achieve a full-time local-quality VSCode-powered containerized development environment. However, if there's any reason that you can not or do not want to work with Visual Studio Code, you can still start a containerized development environment and start working on that or even build your own development solution on top of that.
-
-To start the development container, issue following command:
-
-``` shell
-./scripts/start-devcontainer.sh
-```
-
-For the first run, the script will build an image based on `Dockerfile`, the process may take a while. Latter runs will reuse the prebuilt image.
-
-Once the image was built successfully, it will launch a container in interactive mode and mount the repository's root directory to `/go/src/github.com/the-evengers/go-restful` within the container, so that developers can make changes to the repository locally and have those changes automatically reflected into the container.
-
-In interactive mode within the container, developers can issue every `go` CLI commands, e.g:
-
-``` shell
-# To start the application.
-go run main.go
-```
+Without VSCode, developers will not be able to achieve a full-time local-quality VSCode-powered containerized development environment. However, if there's any reason that you can not or do not want to work with Visual Studio Code, you can still start a containerized development environment and start working on that or even build your own development solution on top of that. Refer [here](docs/DEV-WITHOUT-VSCODE.md) for further details.
 
 ### License
 
