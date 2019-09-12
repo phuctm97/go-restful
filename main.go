@@ -5,6 +5,7 @@ import (
 	"log"
 	"net/http"
 	"runtime"
+	"github.com/gorilla/mux"
 )
 
 func handle(w http.ResponseWriter, r *http.Request) {
@@ -13,8 +14,12 @@ func handle(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
-	http.HandleFunc("/", handle)
-	if err := http.ListenAndServe(":8000", nil); err != nil {
+	// Configure routes.
+	router := mux.NewRouter()
+	router.HandleFunc("/", handle)
+
+	// Start HTTP server.
+	if err := http.ListenAndServe(":8000", router); err != nil {
 		log.Fatal(err)
 	}
 }
