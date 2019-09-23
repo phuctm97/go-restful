@@ -22,7 +22,7 @@ main() {
     --name $container_name \
     --volume $local_workdir:$container_workdir \
     --workdir $container_workdir \
-    --publish 8000:8000
+    --publish 8000:8000 \
     $image_name
 }
 
