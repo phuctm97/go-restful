@@ -5,12 +5,13 @@
     "appPort": [
         "8000:8000"
     ],
-    // Configure to mount local workspace directory to an appropriate workspace directory within development container.
+    // Configure to mount local workspace directory to an appropriate workspace directory
+    // within development container.
     "workspaceMount": "src=${localWorkspaceFolder},dst=/root/project,type=bind",
     "workspaceFolder": "/root/project",
-    // Configure VSCode extensions to be installed into development container's underlying VSCode-Server once having finished launching.
+    // Configure VSCode extensions to be installed into development container's underlying VSCode-Server
+    // once having finished launching.
     "extensions": [
-        "ms-vscode.go",
-        "bungcip.better-toml"
+        "ms-vscode.go"
     ]
 }

@@ -9,12 +9,14 @@ RUN apt-get update \
 # Verify git, process tools, lsb-release (common in install instructions for CLIs) installed.
 RUN apt-get -y install git iproute2 procps lsb-release
 
+# Enable Go Modules.
+ENV GO111MODULE=on
+
 # Install essential tools for Go development.
 RUN apt-get update \
     # Install essential Go packages and tools.
-    && GO111MODULE=on go get golang.org/x/tools/gopls@latest \
-    && go get -u -v \
-        github.com/golang/dep/cmd/dep \
+    && go get \
+        golang.org/x/tools/gopls@latest \
         github.com/mdempsky/gocode \
         github.com/uudashr/gopkgs/cmd/gopkgs \
         github.com/ramya-rao-a/go-outline \
