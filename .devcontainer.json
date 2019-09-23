@@ -1,20 +1,14 @@
 {
     "dockerFile": "Dockerfile",
-    // Configure port mapping between containers and local host,
-    // should be updated respectively to exposed service ports of referencing containers
-    // (defined in Dockerfile or docker-compose.xml or pre-built images).
+    // Configure port mapping between localhost and development container,
+    // should be updated respectively to exposed service ports of referencing container.
     "appPort": [
         "8000:8000"
     ],
-    // Configure to mount local workspace to a proper location within containers following Go module importing mechanism,
-    // should be updated respectively to module importing schema using in Go source files,
-    // and remote repository location if necessary (recommended).
-    "workspaceMount": "src=${localWorkspaceFolder},dst=/go/src/github.com/the-evengers/go-restful,type=bind",
-    "workspaceFolder": "/go/src/github.com/the-evengers/go-restful",
-    // Configure command to run after launching containers.
-    // `dep ensure`: install all external Go modules (derived from Gopkg.lock and actual import statements in Go source files).
-    "postCreateCommand": "dep ensure",
-    // Configure VSCode extensions to be installed into containers' underlying VSCode Server after having finished launching them.
+    // Configure to mount local workspace directory to an appropriate workspace directory within development container.
+    "workspaceMount": "src=${localWorkspaceFolder},dst=/root/project,type=bind",
+    "workspaceFolder": "/root/project",
+    // Configure VSCode extensions to be installed into development container's underlying VSCode-Server once having finished launching.
     "extensions": [
         "ms-vscode.go",
         "bungcip.better-toml"

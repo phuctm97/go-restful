@@ -4,26 +4,28 @@
 set -e
 
 # Derive local workspace's absolute path from script's path.
-local_workdir=$(cd $(dirname $(dirname "${BASH_SOURCE[0]}")) >/dev/null 2>&1 && pwd)
+LOCAL_WORKDIR=$(cd $(dirname $(dirname "${BASH_SOURCE[0]}")) >/dev/null 2>&1 && pwd)
 
 main() {
-  local image_name=vsc-go-restful
-  local container_name=$image_name
-  # Mounted location within containers of local workspace
-  # should be updated respectively to module importing schema using in Go source files,
-  # and remote repository location if necessary (recommended).
-  local container_workdir=/go/src/github.com/the-evengers/go-restful
+  # Variables.
+  local image_tag=go-restful:dev
+  local local_workdir=$LOCAL_WORKDIR
+  local local_port=8000
+
+  local container_name=go-restful-dev
+  local container_workdir=/root/project
+  local container_port=8000
 
   # Build image (if necessary).
-  docker build --rm -t $image_name $local_workdir
+  docker build --rm -t $image_tag $local_workdir
 
   # Start container.
   docker run --rm -it \
     --name $container_name \
     --volume $local_workdir:$container_workdir \
     --workdir $container_workdir \
-    --publish 8000:8000 \
-    $image_name
+    --publish $local_port:$container_port \
+    $image_tag
 }
 
 main

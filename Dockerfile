@@ -11,20 +11,22 @@ RUN apt-get -y install git iproute2 procps lsb-release
 
 # Install essential tools for Go development.
 RUN apt-get update \
-    # Install https://github.com/stamblerre/gocode as gocode-gomod (required by VSCode Go extension).
-    && go get -x -d github.com/stamblerre/gocode 2>&1 \
-    && go build -o gocode-gomod github.com/stamblerre/gocode \
-    && mv gocode-gomod $GOPATH/bin/ \
-    # Install other essential Go packages and tools.
+    # Install essential Go packages and tools.
+    && GO111MODULE=on go get golang.org/x/tools/gopls@latest \
     && go get -u -v \
         github.com/golang/dep/cmd/dep \
-        golang.org/x/tools/cmd/gopls \
         github.com/mdempsky/gocode \
         github.com/uudashr/gopkgs/cmd/gopkgs \
         github.com/ramya-rao-a/go-outline \
         github.com/acroca/go-symbols \
         golang.org/x/tools/cmd/guru \
         golang.org/x/tools/cmd/gorename \
+        github.com/cweill/gotests/... \
+        github.com/fatih/gomodifytags \
+        github.com/josharian/impl \
+        github.com/davidrjenni/reftools/cmd/fillstruct \
+        github.com/haya14busa/goplay/cmd/goplay \
+        github.com/godoctor/godoctor \
         github.com/go-delve/delve/cmd/dlv \
         github.com/stamblerre/gocode \
         github.com/rogpeppe/godef \
