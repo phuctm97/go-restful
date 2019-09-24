@@ -22,7 +22,7 @@ var (
 	regexIsEmail                                     = regexp.MustCompile(`^[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,4}$`)
 )
 
-// ValidateUser validates a user data.
+// ValidateUser validates a user data and returns validation errors or nil.
 func ValidateUser(user *User) error {
 	errs := make([]error, 0)
 
@@ -61,7 +61,7 @@ func ValidateUser(user *User) error {
 		errs = append(errs, errors.New("bio must be at most 128-character length"))
 	}
 
-	// Return errors.
+	// Return errors or nil.
 	if len(errs) == 0 {
 		return nil
 	}
