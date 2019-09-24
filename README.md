@@ -1,30 +1,28 @@
 # Go RESTful
 
-A real world production-grade RESTful proof-of-concept project.
+A real-world production-grade RESTful Web Services proof-of-concept project.
 
 ## Objectives
 
-- An optimized Go implementation follows clean architecture, provides mechanism to declare entities, use cases and external services (e.g. data access).
+- An optimized Go implementation follows [The Clean Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html), provides mechanism to declare Entities, Use cases, and External Services (e.g. data access).
 
-- An optimized Go implementation provides mechanism to exposes entities and use cases as RESTful web services.
+- An optimized Go implementation provides mechanism to expose Entities and Use Cases as [RESTful Web Services](https://en.wikipedia.org/wiki/Representational_state_transfer).
 
-- An optimized Go implementation of token-based authentication and authorization.
+- An optimized Go implementation of Token-based [Authentication](https://en.wikipedia.org/wiki/Authentication) and [Authorization](https://en.wikipedia.org/wiki/Authorization).
 
-- An optimized Go implementation provides abstract mechanism to access relational databases.
+- An optimized Go implementation provides abstract mechanism to access [Relational Databases](https://en.wikipedia.org/wiki/Relational_database).
 
-- An optimized Go development environment with Git, Docker, Go Modules, Go Debuggers (GDB/Delve) and editors (VSCode/GoLand/Vim).
+- An optimized Go Development Environment with [Git](https://git-scm.com/), [Docker](https://www.docker.com/), [Go Modules](https://github.com/golang/go/wiki/Modules), Go Debuggers ([GDB](https://golang.org/doc/gdb)/[Delve](https://github.com/go-delve/delve)) and popular code editors ([VSCode](https://www.google.com/search?client=safari&rls=en&q=vscode&ie=UTF-8&oe=UTF-8)/[GoLand](https://www.jetbrains.com/go/)/[Vim](https://github.com/fatih/vim-go)).
 
-- An optimized CI/CD solution with Github Actions and AWS.
+- An optimized CI/CD Solution with [Github Actions](https://github.com/features/actions) and [AWS](https://aws.amazon.com/).
 
-- An optimized distribution solution using Github Releases and Github Packages.
+- An optimized Distribution Solution with [Github Releases](https://help.github.com/en/enterprise/2.16/user/articles/about-releases) and [Github Package Registry](https://help.github.com/en/articles/about-github-package-registry).
 
-- An optimized staging environment replicating production environment for testing purposes.
+- An optimized Staging Environment replicating Production Environment for testing purposes.
 
-- A scalable and highly available production deployment solution over AWS using Terraform.
+- A Scalable and Highly-available Production Deployment Solution over [AWS](https://aws.amazon.com/) using [Terraform](https://www.terraform.io/).
 
-- An optimized issues tracking mechanism with Github projects, issues and pull requests.
-
-- An optimized documentation solution with Github Markdown and Github Wiki.
+- An optimized Issues Tracking mechanism with [Github Project](https://github.com/features/project-management/), [Issues](https://help.github.com/en/articles/about-issues) and [Pull Requests](https://help.github.com/en/articles/about-pull-requests).
 
 - Continual improvements.
 
