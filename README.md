@@ -1,6 +1,6 @@
 # Go RESTful
 
-A real-world production-grade RESTful Web Services proof-of-concept project.
+A real world production-grade RESTful Web Services proof-of-concept project.
 
 ## Objectives
 
@@ -65,8 +65,10 @@ Quick overview of project structure, components and their roles.
 
 ```
 ├── 📁.vscode/              # VSCode configurations.
+├── 📁common/               # Common, utility Go components.
 ├── 📁docs/                 # Documentation & assets.
 ├── 📁scripts/              # Utility scripts.
+├── 📁users/                # Users-related Go components.
 ├── 📄.devcontainer.json    # VSCode Remote-Containers configuration.
 ├── 📄.gitignore
 ├── 📄Dockerfile            # Instructions to build development Docker image.
