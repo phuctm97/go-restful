@@ -10,5 +10,5 @@ func (errs Errors) Error() string {
 	for i, err := range errs {
 		msgs[i] = err.Error()
 	}
-	return fmt.Sprintf("%#v\n", msgs)
+	return fmt.Sprint(msgs)
 }

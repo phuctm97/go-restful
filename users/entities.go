@@ -1,7 +1,6 @@
 package users
 
 import (
-	"errors"
 	"regexp"
 
 	"github.com/the-evengers/go-restful/common"
@@ -28,37 +27,37 @@ func ValidateUser(user *User) error {
 
 	// Validate username.
 	if len(user.Username) < 1 {
-		errs = append(errs, errors.New("username must be at least 1-character length"))
+		errs = append(errs, ErrUsernameIsTooShort)
 	}
 	if len(user.Username) > 32 {
-		errs = append(errs, errors.New("username must be at most 32-character length"))
+		errs = append(errs, ErrUsernameIsTooLong)
 	}
 	if !regexContainsOnlyDigitsUnderscoreDashesDotsAlpha.MatchString(user.Username) {
-		errs = append(errs, errors.New("username must contain only digits, underscores, dashes, dots and alphabetical letters"))
+		errs = append(errs, ErrUsernameContainsInvalidChar)
 	}
 	if !regexBeginsWithUnderscoreOrAlpha.MatchString(user.Username) {
-		errs = append(errs, errors.New("username must begin with either underscore or an alphabetical letter"))
+		errs = append(errs, ErrUsernameBeginsWithInvalidChar)
 	}
 
 	// Validate email.
 	if !regexIsEmail.MatchString(user.Email) {
-		errs = append(errs, errors.New("email is invalid"))
+		errs = append(errs, ErrEmailIsInvalid)
 	}
 	if len(user.Email) > 128 {
-		errs = append(errs, errors.New("email must be at most 128-character length"))
+		errs = append(errs, ErrEmailIsTooLong)
 	}
 
 	// Validate full name.
 	if len(user.FullName) < 1 {
-		errs = append(errs, errors.New("full name must be at least 1-character length"))
+		errs = append(errs, ErrFullNameIsTooShort)
 	}
 	if len(user.FullName) > 128 {
-		errs = append(errs, errors.New("full name must be at most 128-character length"))
+		errs = append(errs, ErrFullNameIsTooLong)
 	}
 
 	// Validate bio.
 	if len(user.Bio) > 256 {
-		errs = append(errs, errors.New("bio must be at most 128-character length"))
+		errs = append(errs, ErrBioIsTooLong)
 	}
 
 	// Return errors or nil.
