@@ -14,13 +14,6 @@ type User struct {
 	Bio      string
 }
 
-// Regular expressions.
-var (
-	regexContainsOnlyDigitsUnderscoreDashesDotsAlpha = regexp.MustCompile(`^[0-9a-zA-Z_\.\-]*$`)
-	regexBeginsWithUnderscoreOrAlpha                 = regexp.MustCompile(`^[a-zA-Z_].*$`)
-	regexIsEmail                                     = regexp.MustCompile(`^[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,4}$`)
-)
-
 // ValidateUser validates a user data and returns validation errors or nil.
 func ValidateUser(user *User) error {
 	errs := make([]error, 0)
@@ -66,3 +59,42 @@ func ValidateUser(user *User) error {
 	}
 	return common.Errors(errs)
 }
+
+// ValidateUserUnique validates whether user's username or email is valid and returns errors or nil.
+func ValidateUserUnique(userRepo UserRepository, user *User) error {
+	errs := make([]error, 0)
+
+	var exists bool
+	var err error
+
+	// Validate username.
+	exists, err = userRepo.ExistsByUsername(user.Username)
+	if err != nil {
+		return err
+	}
+	if exists {
+		errs = append(errs, ErrUsernameWasUsed)
+	}
+
+	// Validate email.
+	exists, err = userRepo.ExistsByEmail(user.Email)
+	if err != nil {
+		return err
+	}
+	if exists {
+		errs = append(errs, ErrEmailWasUsed)
+	}
+
+	// Return errors or nil.
+	if len(errs) == 0 {
+		return nil
+	}
+	return common.Errors(errs)
+}
+
+// Regular expressions.
+var (
+	regexContainsOnlyDigitsUnderscoreDashesDotsAlpha = regexp.MustCompile(`^[0-9a-zA-Z_\.\-]*$`)
+	regexBeginsWithUnderscoreOrAlpha                 = regexp.MustCompile(`^[a-zA-Z_].*$`)
+	regexIsEmail                                     = regexp.MustCompile(`^[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,4}$`)
+)

@@ -37,9 +37,9 @@ func TestValidateUser(t *testing.T) {
 		{
 			User{
 				Username: "username.dot-dash_underscore",
-				Email: "good@email.com",
+				Email:    "good@email.com",
 				FullName: "Good Full Name",
-				Bio: "Good Bio",
+				Bio:      "Good Bio",
 			},
 			nil,
 		},
