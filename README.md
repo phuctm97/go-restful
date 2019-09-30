@@ -18,9 +18,9 @@
 
 - An optimized Distribution Solution with [Github Releases](https://help.github.com/en/enterprise/2.16/user/articles/about-releases) and [Github Package Registry](https://help.github.com/en/articles/about-github-package-registry).
 
-- An optimized Staging Environment replicating Production Environment for testing purposes.
+- A scalable and highly-available Production Deployment Solution over [AWS](https://aws.amazon.com/) using [Terraform](https://www.terraform.io/).
 
-- A Scalable and Highly-available Production Deployment Solution over [AWS](https://aws.amazon.com/) using [Terraform](https://www.terraform.io/).
+- An optimized Staging Environment replicating Production Environment for testing purposes.
 
 - An optimized Issues Tracking mechanism with [Github Project](https://github.com/features/project-management/), [Issues](https://help.github.com/en/articles/about-issues) and [Pull Requests](https://help.github.com/en/articles/about-pull-requests).
 

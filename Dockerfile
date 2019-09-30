@@ -14,6 +14,7 @@ ENV GO111MODULE=on
 
 # Install essential tools for Go development.
 RUN apt-get update \
+    && go build -o $GOPATH/bin/gocode-gomod github.com/stamblerre/gocode 2>&1 \
     # Install essential Go packages and tools.
     && go get \
         golang.org/x/tools/gopls@latest \
@@ -30,7 +31,6 @@ RUN apt-get update \
         github.com/haya14busa/goplay/cmd/goplay \
         github.com/godoctor/godoctor \
         github.com/go-delve/delve/cmd/dlv \
-        github.com/stamblerre/gocode \
         github.com/rogpeppe/godef \
         golang.org/x/tools/cmd/goimports \
         golang.org/x/lint/golint 2>&1 \
