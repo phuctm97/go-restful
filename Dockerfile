@@ -1,10 +1,9 @@
 FROM golang:1
 
-# Configure to avoid build warnings and errors as described in official VSCode Remote-Containers extension documentation.
-# See https://code.visualstudio.com/docs/remote/containers-advanced#_reducing-dockerfile-build-warnings.
+# Configure to avoid redundant error "debconf: delaying package configuration, since apt-utils is not installed".
+# See https://code.visualstudio.com/docs/remote/containers-advanced#_debconf-delaying-package-configuration-since-aptutils-is-not-installed.
 ENV DEBIAN_FRONTEND=noninteractive
-RUN apt-get update \
-    && apt-get -y install --no-install-recommends apt-utils 2>&1
+RUN apt-get update && apt-get -y install --no-install-recommends apt-utils
 
 # Verify git, process tools, lsb-release (common in install instructions for CLIs) installed.
 RUN apt-get -y install git iproute2 procps lsb-release
@@ -13,10 +12,7 @@ RUN apt-get -y install git iproute2 procps lsb-release
 ENV GO111MODULE=on
 
 # Install essential tools for Go development.
-RUN apt-get update \
-    && go build -o $GOPATH/bin/gocode-gomod github.com/stamblerre/gocode 2>&1 \
-    # Install essential Go packages and tools.
-    && go get \
+RUN go get \
         golang.org/x/tools/gopls@latest \
         github.com/mdempsky/gocode \
         github.com/uudashr/gopkgs/cmd/gopkgs \
@@ -33,13 +29,15 @@ RUN apt-get update \
         github.com/go-delve/delve/cmd/dlv \
         github.com/rogpeppe/godef \
         golang.org/x/tools/cmd/goimports \
-        golang.org/x/lint/golint 2>&1 \
-    # Clean up.
-    && apt-get autoremove -y \
-    && apt-get clean -y \
+        golang.org/x/lint/golint \
+    && go build -o $GOPATH/bin/gocode-gomod github.com/stamblerre/gocode
+
+# Clean up.
+RUN apt-get autoremove -y && apt-get clean -y \
     && rm -rf /var/lib/apt/lists/*
 
-# Revert configurations that was set at top layer (for avoiding build warnings and errors).
+# Revert workaround of avoiding redundant error "debconf: delaying package configuration, since apt-utils is not installed".
+# See https://code.visualstudio.com/docs/remote/containers-advanced#_debconf-delaying-package-configuration-since-aptutils-is-not-installed.
 ENV DEBIAN_FRONTEND=dialog
 
 # Expose service ports.

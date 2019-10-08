@@ -5,6 +5,7 @@
         "**/.hg": true,
         "**/CVS": true,
         "**/.DS_Store": true,
+        "__debug_bin": true,
         "vendor/": true,
         "go.sum": true
     },
@@ -14,5 +15,7 @@
     "remote.extensionKind": {
         "ms-azuretools.vscode-docker": "ui",
         "ms-vscode-remote.remote-containers": "ui"
-    }
+    },
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": true
 }
